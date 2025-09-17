@@ -17,8 +17,11 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/', function () {
 
-    $user = auth()->user(3);
-    $assignRole = $user->assignRole('Administrateur');
+    $createAdmin = Role::create(['name' => 'Administrateur']);
+    $creatUser  = Role::create(['name' => 'Utilisateurs']);
+    
+    // $user = auth()->user(1);
+    // $assignRole = $user->assignRole('Administrateur');
 
     return view('welcome');
 

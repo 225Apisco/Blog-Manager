@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('description');
+            $table->string('category');
             $table->string('photo')->nullable();
             $table->Integer('price');
             $table->timestamps();
