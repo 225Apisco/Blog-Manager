@@ -58,12 +58,58 @@
         </nav>
     </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main class="flex-grow-1 py-4">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="bg-light text-center py-5">
         <div class="container">
-            @yield('content')
+            <h1 class="display-4 fw-bold">Bienvenue sur Blog Manager 🚀</h1>
+            <p class="lead text-muted mb-4">Gérez facilement vos articles, interagissez avec vos lecteurs et développez votre audience en toute simplicité.</p>
+            <a href="{{ route('register') }}" class="btn btn-primary btn-lg rounded-pill px-4">Commencer maintenant</a>
         </div>
-    </main>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Pourquoi choisir Blog Manager ?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Gestion des articles">
+                        <div class="card-body">
+                            <h5 class="card-title">Gestion des articles</h5>
+                            <p class="card-text text-muted">Créez, modifiez et organisez vos articles de blog en toute simplicité avec une interface intuitive.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Commentaires et échanges">
+                        <div class="card-body">
+                            <h5 class="card-title">Commentaires & échanges</h5>
+                            <p class="card-text text-muted">Interagissez directement avec vos lecteurs et développez une vraie communauté autour de vos contenus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Statistiques avancées">
+                        <div class="card-body">
+                            <h5 class="card-title">Statistiques avancées</h5>
+                            <p class="card-text text-muted">Suivez les performances de vos articles et optimisez votre stratégie de publication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Prêt à partager vos idées avec le monde ?</h2>
+            <a href="{{ route('register') }}" class="btn btn-light btn-lg rounded-pill px-4">Créer mon compte gratuit</a>
+        </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-dark text-light py-4 mt-auto">
