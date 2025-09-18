@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Role;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,10 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/', function () {
 
-    $createAdmin = Role::create(['name' => 'Administrateur']);
-    $creatUser  = Role::create(['name' => 'Utilisateurs']);
-    
-    // $user = auth()->user(1);
-    // $assignRole = $user->assignRole('Administrateur');
+
+
+    $user = user::first();
+    $user->assignRole('Administrateur');
 
     return view('welcome');
 
