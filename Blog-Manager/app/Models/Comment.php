@@ -8,7 +8,7 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['post_id', 'user_id', 'content'];
+    protected $fillable = ['ads_id', 'user_id', 'content'];
 
     public function post()
     {
@@ -19,4 +19,9 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function ad()
+{
+    return $this->belongsTo(Ad::class);
+}
+
 }

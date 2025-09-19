@@ -1,11 +1,11 @@
 <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
     @if($ad->photos->isNotEmpty())
-        <img src="{{ asset('storage/' . $ad->photos->first()->path) }}" 
-             alt="Photo {{ $ad->title }}" 
+        <img src="{{ asset('storage/' . $ad->photos->first()->path) }}"
+             alt="Photo {{ $ad->title }}"
              class="w-auto h-auto object-cover">
     @else
-        <img src="{{ asset('images/no-image.jpg') }}" 
-             alt="no photo" 
+        <img src="{{ asset('images/no-image.jpg') }}"
+             alt="no photo"
              class="w-auto h-auto object-cover">
     @endif
 
@@ -22,9 +22,11 @@
             <span>{{ $ad->created_at->format('d/m/Y') }}</span>
         </div>
 
-        <a href="{{ route('ads.show', $ad) }}" 
+        <a href="{{ route('ads.show', $ad) }}"
            class="inline-block text-center text-black px-4 py-2 text-2xl font-semibold">
             Voir Détails
         </a>
     </div>
+
+    
 </div>

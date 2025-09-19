@@ -10,24 +10,15 @@ class CommentController extends Controller
     public function store(Request $request, Ad $ad)
     {
         $request->validate([
-            'content' => 'required|string|max:1000',
+            'content' => 'required|string',
+            'user_name' => 'nullable|string|max:100'
         ]);
 
         $ad->comments()->create([
-            'user_id' => auth()->id(),
-            'content' => $request->content,
+            'user_name' => $request->user_name,
+            'content' => $request->content
         ]);
 
-        return back()->with('success', 'Commentaire ajouté !');
-    }
-
-    public function destroy(Comment $comment)
-    {
-        if ($comment->user_id !== auth()->id()) {
-            abort(403);
-        }
-
-        $comment->delete();
-        return back()->with('success', 'Commentaire supprimé !');
+        return redirect()->back();
     }
 }
